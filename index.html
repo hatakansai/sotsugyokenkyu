@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<title>画像の重畳表示</title>
+		 <link rel="stylesheet" href="style.css">
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+		 <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+</head>
+<body>
+<input type="text" id="datepicker" />
+<script>$('#datepicker').datepicker({
+    dateFormat: 'yy-mm-dd',
+    minDate: "-20d",
+    maxDate: "today",
+    onSelect: function(dateText, inst){
+    	var date = $(this).datepicker('getDate'),
+    		day = date.getDate(),
+    		month = date.getMonth() + 1,
+    		year = date.getFullYear();
+    	alert(day + '-' + month + '-' + year);
+    	}
+	});
+</script>
+<label for="time">時刻指定：</label>
+<input type="time" id="time" name="時刻指定" value="" />
+<script>
+	var timecontrol = document.querySelector('input[type = "time"]');
+	alert(timecontrol);
+</script>
+
+<div class="under">
+		<img src="human.png">
+		<!--撮影した室内の画像を表示します。同じ位置にセンサを設置してください-->
+</div>
+<div class="top">
+		<img src="ondo2.png">
+		<!--臨時確認用のコードです。実際には同一ネットワーク内のRasberry Piから取得したデータを表示します-->
+</div>
+</body>
+</html>

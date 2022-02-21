@@ -1,0 +1,19 @@
+.under{
+  position: relative;
+  max-width: 100vw;
+  height: auto;
+  }
+  
+.top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  position: absolute;
+  top: 3.45%;
+  left: 0.5%;
+  max-width: 100vw;
+  height: auto;
+  opacity: 0.4;
+  /*全画面表示だと見やすいはずです*/
+  }
